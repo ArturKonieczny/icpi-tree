@@ -3,19 +3,19 @@ const csvLineEnd = /\r\n|\n/;
 const fieldSeparator = ';';
 
 module.exports = function processCsv(csvData) {
-  const fileData = rawData.split(csvLineEnd);
-  const traits = {};
+  const fileData = csvData.split(csvLineEnd);
+  const traitCount = {};
   const points = [];
 
-  for (let csvLine of fileData) {
+  for (const csvLine of fileData) {
     const pointData = csvLine.split(fieldSeparator);
 
     if (!validateDataRow(pointData)) {
-      console.log(`Skipped invalid line ${csvLine}.`);
+      // console.log(`Skipped invalid line ${csvLine}.`);
       continue;
     }
 
-    const [id , trait, locationX, locationY] = pointData;
+    const [id, trait, locationX, locationY] = pointData;
 
     points.push({
       id,
@@ -24,19 +24,15 @@ module.exports = function processCsv(csvData) {
       locationY
     });
 
-    if (traits.hasOwnProperty(`${trait}`)) {
-      traits[trait].push(id);
+    if (traitCount.hasOwnProperty(`${trait}`)) {
+      traitCount[trait]++;
     } else {
-      traits[trait] = [id];
+      traitCount[trait] = 1;
     }
   }
 
-  for (const traitName in traits) {
-    traits[traitName].sort((one, two) => one - two);
-  }
-
   return {
-    traits,
+    traitCount,
     points
   };
-}
+};

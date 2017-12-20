@@ -1,7 +1,10 @@
+const processCsv = require('./processCsv');
+const validateInputData = require('./validateinputdata');
+
 module.exports = function processInputData(inputData) {
-  if (typeof(inputData) === 'string') {
+  if (typeof inputData === 'string') {
     return processCsv(inputData);
   }
 
   return validateInputData(inputData);
-}
+};

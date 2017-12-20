@@ -1,6 +1,11 @@
 const minTrait = 0;
 const requiredProperties = ['id', 'trait', 'locationX', 'locationY'];
 
+/**
+ * Check if user provided single point data is correct.
+ * @param  {Object} pointData User provided single point data object.
+ * @return {Boolean}          True if correct.
+ */
 module.exports = function validatePointData(pointData) {
   for (const property in requiredProperties) {
     if (!pointData.hasOwnProperty(property)) {

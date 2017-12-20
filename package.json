@@ -4,7 +4,8 @@
   "description": "Creates an ICPi-Tree for given vertices.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter=list spec/**/*.spec.js",
+    "test:watch": "mocha --reporter=min --watch spec/**/*.spec.js & exit 0"
   },
   "repository": {
     "type": "git",
@@ -13,7 +14,9 @@
   "author": "AK",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^4.6.1",
-    "eslint-config-qb": "^1.0.0"
+    "chai": "^4.1.2",
+    "eslint": "^4.7.1",
+    "eslint-config-qb": "^1.0.0",
+    "mocha": "^3.5.3"
   }
 }

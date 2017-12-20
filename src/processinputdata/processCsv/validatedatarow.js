@@ -1,6 +1,11 @@
 const dataRowLength = 4;
 const minTrait = 0;
 
+/**
+ * Check if single CSV row is correct.
+ * @param  {String} pointDataRow Single row of csv file.
+ * @return {Boolean}             True if correct.
+ */
 module.exports = function validateDataRow(pointDataRow) {
   if (pointDataRow.length !== dataRowLength) {
     return false;

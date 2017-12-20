@@ -1,5 +1,11 @@
 const calculateDistance2D = require('./calculateDistance2D');
 
+/**
+ * Creates iCPI-tree using PlainSweep algorithm.
+ * @param  {Array} pointData  Array of point Objects ({id, trait, locationX, locationY})
+ * @param  {Number} maxDist   Maximum distance for points to be considered neighbours.
+ * @return {Object}           iCPI-tree in the form of hashmap. Key: 'pointID:trait', value: Array of neighbours ids.
+ */
 module.exports = function createIcpi(pointData, maxDist) {
   const icpiTree = {};
   const sortedData = pointData.sort((one, two) => one.locationX - two.locationX);

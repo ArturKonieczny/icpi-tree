@@ -2,6 +2,11 @@ const validateDataRow = require('./validatedatarow');
 const csvLineEnd = /\r\n|\n/;
 const fieldSeparator = ';';
 
+/**
+ * Process CSV input.
+ * @param  {String} csvData CSV content.
+ * @return {Object}         {traitCount, points}
+ */
 module.exports = function processCsv(csvData) {
   const fileData = csvData.split(csvLineEnd);
   const traitCount = {};

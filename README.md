@@ -59,7 +59,6 @@ const  inputData = [ { id: '1', trait: '0', locationX: '1', locationY: '7' },
   { id: '12', trait: '0', locationX: '20', locationY: '7' },
   { id: '13', trait: '3', locationX: '21', locationY: '5' },
   { id: '14', trait: '1', locationX: '26', locationY: '4' },
-
   { id: '15', trait: '2', locationX: '27', locationY: '4' } ];
 ```
 

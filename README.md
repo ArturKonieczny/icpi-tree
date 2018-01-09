@@ -65,18 +65,11 @@ const  inputData = [ { id: '1', trait: '0', locationX: '1', locationY: '7' },
 ## Returns
 
 1. iCPI-tree in form of hashmap. Key: 'pointID:trait', value: Array of neighbours ids.
-2. pointData in form of Object.
+2. pointData.
 ```js
-pointData = {
-  traitCounts: {
-    ...
-    trait: count,
-    ...
-  },
-  points: [
+pointData = [
     ...
     {id, trait, locationX, locationY},
     ...
-  ]
-}
+];
 ```

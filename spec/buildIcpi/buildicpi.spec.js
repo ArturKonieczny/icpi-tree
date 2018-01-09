@@ -28,6 +28,12 @@ describe('icpi results', () => {
       expect(result).to.have.property('pointData');
     });
 
+    it('property "pointData" should be an Array', () => {
+      const result = icpi(testCase.input);
+
+      expect(result.pointData).to.be.an('Array');
+    });
+
     it('property "icpiTree" should be an Object', () => {
       const result = icpi(testCase.input);
 

@@ -9,7 +9,6 @@ const fieldSeparator = ';';
  */
 module.exports = function processCsv(csvData) {
   const fileData = csvData.split(csvLineEnd);
-  const traitCount = {};
   const points = [];
 
   for (const csvLine of fileData) {
@@ -28,16 +27,7 @@ module.exports = function processCsv(csvData) {
       locationX,
       locationY
     });
-
-    if (traitCount.hasOwnProperty(`${trait}`)) {
-      traitCount[trait]++;
-    } else {
-      traitCount[trait] = 1;
-    }
   }
 
-  return {
-    traitCount,
-    points
-  };
+  return points;
 };

@@ -4,9 +4,9 @@ const testCases = require('./testCases');
 
 describe('points results', () => {
   testCases.forEach((testCase) => {
-    const { points } = icpi(testCase.input).pointData;
+    const { pointData } = icpi(testCase.input);
 
-    for (const point of points) {
+    for (const point of pointData) {
       it(`point should be an Object`, () => {
         expect(point).to.be.an('Object');
       });

@@ -18,7 +18,7 @@ module.exports = function buildIcpi(inputData, maxDist = defaultMaxDist) {
   }
 
   return {
-    icpiTree: createIcpi(pointData.points, maxDist),
+    icpiTree: createIcpi(pointData, maxDist),
     pointData
   };
 };

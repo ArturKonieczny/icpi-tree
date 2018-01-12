@@ -24,8 +24,8 @@ module.exports = function processCsv(csvData) {
     points.push({
       id,
       trait,
-      locationX,
-      locationY
+      locationX: Number(locationX),
+      locationY: Number(locationY)
     });
   }
 

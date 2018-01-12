@@ -13,7 +13,7 @@ module.exports = function validateDataRow(pointDataRow) {
 
   for (let pointData of pointDataRow) {
     pointData = pointData.replace(/ /g, '').replace(/\t/g, '');
-    if (isNaN(pointData) || pointDataRow === '') {
+    if (isNaN(pointData) || pointData === '') {
       return false;
     }
   }
@@ -22,7 +22,7 @@ module.exports = function validateDataRow(pointDataRow) {
     return false;
   }
 
-  if (pointDataRow[1] < minTrait || !Number.isInteger(Number(pointDataRow[1]))) {
+  if (Number(pointDataRow[1]) < minTrait || !Number.isInteger(Number(pointDataRow[1]))) {
     return false;
   }
 

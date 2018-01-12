@@ -18,7 +18,7 @@ const { icpiTree, pointData} = icpi(inputData[, maxDist]); // default maxDist is
 
 ```
 
-## Sample settings
+## Entry data
 
 CSV
 ```js
